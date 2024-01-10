@@ -11,4 +11,8 @@ import { IElement } from '../interfaces/IElement.interface';
 })
 export class TableComponent {
   @Input() elements!: IElement[];
+
+  trackByFn(index: number, item: IElement): string {
+    return item.id;
+  }
 }

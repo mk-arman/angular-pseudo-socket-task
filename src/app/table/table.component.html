@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let element of elements">
+      <tr *ngFor="let element of elements; trackBy: trackByFn">
         <td>{{ element.id }}</td>
         <td>{{ element.int }}</td>
         <td class="elipsis">{{ element.float }}</td>
