@@ -1,0 +1,48 @@
+<ng-container *ngIf="elements.length; else noElements">
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>int</th>
+        <th>float</th>
+        <th>color</th>
+        <th style="width: 10%">child</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let element of elements">
+        <td>{{ element.id }}</td>
+        <td>{{ element.int }}</td>
+        <td class="elipsis">{{ element.float }}</td>
+        <td>
+          <span [ngStyle]="{ 'background-color': element.color }">
+            {{ element.color }}
+          </span>
+        </td>
+        <td>
+          <table>
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>color</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ element.child.id }}</td>
+                <td>
+                  <span [ngStyle]="{ 'background-color': element.child.color }">
+                    {{ element.child.color }}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+<ng-template #noElements>
+  <span data-testid="no-value"> No Elements </span>
+</ng-template>

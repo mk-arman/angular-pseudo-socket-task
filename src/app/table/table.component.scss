@@ -1,0 +1,19 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  tr {
+    border: 1px solid gray;
+
+    td {
+      text-align: center;
+
+      &.elipsis {
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap
+      }
+    }
+  }
+}
